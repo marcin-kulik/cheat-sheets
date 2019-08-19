@@ -1,0 +1,209 @@
+	
+	1.1:	MOVING THE CURSOR
+
+		h      	- left
+		j      	- down
+		k    	- up
+		l    	- right
+
+		<ESC>  	- normal mode
+	
+
+	1.2:	EXITING VIM
+
+		:q!	- exit editor, discard changes
+		
+	
+	1.3:	TEXT EDITING - DELETION
+	
+		x	- delete the character under the cursor
+	
+	
+	1.4:	TEXT EDITING - INSERTION
+
+		i	- insert a text under the cursor
+
+	
+	1.5:	TEXT EDITING - APPENDING
+
+		A	- append a text at the end of line
+
+	1.6:	EDITING A FILE
+
+		:wq	- save a file and exits vim
+
+	2.1:	DELETION COMMANDS
+		
+		dw	- delete a word
+			
+	2.2:	MORE DELETION COMMANDS
+
+		d$	- delete everything from the cursor till the end of line
+		
+	2.3:	ON OPERATORS AND MOTIONS
+	
+		operator + motion	E.g.	 dw, de, d$
+	
+		List of motions:
+		w	- until the start of the next word, excluding its first character 
+		e	- to the end of the current word, including the last chracter
+		$	- to the end of the line, including the last character
+
+
+	2.4:	USING A COUNT FOR A MOTION
+
+		2w	- move the cursor 2 words forward
+		3e	- move the cursor to the end of third word forward
+		0	- move the cursor to the start of the line
+
+
+	2.5:	USING A COUNT TO DELETE MORE
+
+		d + number + motion 	E.g	d2w
+
+		d2w	- delete 2 words
+		
+
+	2.6:	OPERATING ON LINES
+		
+		dd	- delete the whole line
+		2dd	- delete 2 lines
+
+
+	2.7:	THE UNDO COMMAND
+
+		u	- undo the last command
+		U	- return the line to its original state
+		CTRL+R	- redo the command(undo the undo's)
+
+	
+	3.1: 	THE PUT COMMAND
+
+		p	- (after deleting the line) will put the line below the cursor
+		
+
+	3.2:	THE REPLACE COMMAND
+
+		rx	- replace anything under the cursor with x
+
+
+	3.3:	THE CHANGE OPERATOR
+
+		ce	- change until the end of the word
+
+	
+	3.4:	MORE CHANGES USING c
+
+		c + number + motion	E.g.	c2w
+		
+		c$ 	 - change everything from the cursor to the end of line
+	
+	
+	4.1:	CURSOR LOCATION AND FILE STATUS
+
+		Ctrl+g	 - shows the location in the file
+		G	 - moves the cursor to the bottom of the file
+		gg	 - moves the cursor to the start of the file
+		11G	 - moves the cursor to the line 11
+		
+
+	4.2:	THE SEARCH COMMAND
+
+		/ 	 - search for a phrase in forward direction
+		?	 - search for a phrase in backward direction
+		n	 - search for the same phrase again
+		N	 - search for the same phrase in the opposite direction
+		Ctrl+o	 - go back to older position 
+		Ctrl+i	 - goes to newer position 
+
+	
+	4.3:	MATCHING PARENTHESES SEARCH
+
+		%	- find a matching ),] or }; this is useful in debugging unmatched parentheses
+
+	
+	4.4:	THE SUBSTITUTE COMMAND
+
+		:s/old/new	  - substitute the first occurence in the line
+		:s/old/new/g	  - substitute every occurence in the line
+		:#,#s/old/new/g	  - substitute every occurence within the range of lines where # stands for the line number
+		:%s/old/new/g	  - substitute every instance of occurence in the whole file
+		:%s/old/new/gc	  - substitute every instance of occurence in the whole file with the prompt for each file
+
+
+	5.1:	HOW TO EXECUTE EXTERNAL COMMAND
+
+		:! + cmd	E.g.	:!ls
+		<Enter>		- to quit
+
+	
+	5.2:	MORE ON WRITING FILES
+
+		:w filename	- copies the current file to filename
+		:!rm filename	- removes the filename
+
+
+	5.3:	SELECTING TEXT TO WRITE
+		
+		v + motion	- select
+
+		after selecting:
+		
+		:w filename	- save selection to filename
+		d		- delete selection
+		
+		
+
+	5.4:	RETRIEVING AND MERGING FILES
+		
+		:r filename	- inserts a text from filename
+		:r !+cmd	- insert output of a cmd
+
+	 	 	
+
+	6.1:	THE OPEN COMMAND
+
+		o	- open a line below the cursor in insert mode
+		O	- open a line above the cursor in insert mode
+
+	
+	6.2:	THE APPEND COMMAND
+
+		a	- append text after the cursor	
+	
+
+	6.3:	ANOTHER WAY TO REPLACE
+
+		R	- an insert mode that replaces every character
+
+	6.4: 	COPY AND PASTE TEXT
+
+		y	- copy highlited text
+		p	- paste the text
+		yw	- copy one word
+
+
+	6.5:	SET OPTION
+	
+		:set ic	  	  - set vim to ignore case
+		:set noic	  - remove ignore case
+		:set hls 	  - set vim to highlight search
+		:set nohls	  - remove highlight search
+		:nohlsearch	  - remove highlights from search
+		:set incsearch	  - set vim for partial match search
+		:set noincsearch  - remove partial match search
+		/search\c	  - ignore case for one search
+
+	
+	7.1	GETTING HELP
+
+		:help 		 - on-line help system
+		:help + argument	E.g.	help w
+		CTRL-W		 - switch between windows 
+		:q		 - close help window
+
+	
+	7.2	COMPLETION
+
+		<TAB>			- autocomplete
+		:letter + <Ctrl+d>	- list of command fot a chosen letter
